@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package products;
+
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    float price = 4;
+    string category = 5;
+    string image = 6;
+}
+
+message ProductList {
+    repeated Product products = 1;
+}
+
+message ProductListRequest {}
+
+message Wishlist {
+    repeated Product products = 1;
+}
+
+message WishlistRequest {}
+
+message AddToWishlistRequest {
+    string id = 1;
+}
+
+message AddToWishlistResponse {
+    repeated Product products = 1;
+    bool isExist = 2;
+}
+
+message RemoveFromWishlistRequest {
+    string id = 1;
+}
+
+message RemoveFromWishlistResponse {
+    repeated Product products = 1;
+    bool isExist = 2;
+}
+
+message CheckConnectionRequest {}
+
+message CheckConnectionResponse {
+    bool success = 1;
+}
+
+service ProductService {
+      rpc CheckConnection (CheckConnectionRequest) returns (CheckConnectionResponse);
+      rpc GetProducts(ProductListRequest) returns (ProductList);
+      rpc GetWishList(WishlistRequest) returns (Wishlist);
+      rpc AddToWishlist(AddToWishlistRequest) returns (AddToWishlistResponse);
+      rpc RemoveFromWishlist(RemoveFromWishlistRequest) returns (RemoveFromWishlistResponse);
+}
+
+

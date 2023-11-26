@@ -1,0 +1,39 @@
+name: etiya_flutter_assignment
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.1.3
+  get_it: ^7.6.4
+  equatable: ^2.0.5
+  grpc: ^3.2.4
+  protobuf: ^3.1.0
+  protoc_plugin: ^21.1.2
+  dartz: ^0.10.1
+
+  #assignemnt packages
+  list_products:
+    path: packages/list_products
+  
+  view_product_detail:
+    path: packages/view_product_detail
+  flutter_native_splash: ^2.3.6
+  fluttertoast: ^8.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
